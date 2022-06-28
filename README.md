@@ -21,6 +21,14 @@ sudo systemctl start jenkins
 #check: 
 sudo service jenkins status
 
+#install git
+sudo apt install git -y
+
+#creat folder
+sudo mkdir /tmp/123
+sudo chmod 777 /tmp/123
+
+
 #Setting jenkins:
 
 #Start the firewall:
