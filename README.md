@@ -1,38 +1,38 @@
-# install_jenkins
+# install_jenkins:
 sudo apt update
 
 java -version
-#if not install
+#if not install:
 sudo apt install default-jdk -y
 
-#add key repo
+#add key repo:
 sudo wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
 
-#add address repo
+#add address repo:
 sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 sudo apt update
 
-#install jenkins
+#install jenkins:
 sudo apt install jenkins -y
 
-#start jenkins
+#start jenkins:
 sudo systemctl start jenkins
 
-#check 
+#check: 
 sudo service jenkins status
 
-#Setting jenkins
+#Setting jenkins:
 
-#Start the firewall
+#Start the firewall:
 sudo ufw enable -y
 
-#open port 8080
+#open port 8080:
 sudo ufw allow 8080
 
-#firewall status
+#firewall status:
 sudo ufw status
 
 http://ip_addr_host:8080
 
-#Show password
+#Show password:
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
